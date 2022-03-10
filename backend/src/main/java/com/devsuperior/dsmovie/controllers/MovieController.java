@@ -16,16 +16,20 @@ import com.devsuperior.dsmovie.services.MovieService;
 public class MovieController {
 	
 	@Autowired
-	private MovieService service;
-	
+	private MovieService movieService;
+
 	@GetMapping
-	public Page<MovieDTO> findAll(Pageable pageable){
-		return service.findAll(pageable);		
+	public Page<MovieDTO> findAll(Pageable pageable) {
+		return movieService.findAll(pageable);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public MovieDTO findById(@PathVariable Long id){
-		return service.findById(id);		
+	public MovieDTO findAll(@PathVariable Long id) {
+		return movieService.findById(id);
 	}
-
+	
+	
+	
+	
+	
 }
